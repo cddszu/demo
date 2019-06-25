@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="28px" height="28px" viewBox="0 0 28 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.1 (57501) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 8 Copy 6</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <polygon id="path-1" points="0 0 26 0 26 20 0 20"></polygon>
+    </defs>
+    <g id="UI-规范" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon" transform="translate(-464.000000, -472.000000)">
+            <g id="shangyibu-copy" transform="translate(478.000000, 486.000000) scale(-1, 1) translate(-478.000000, -486.000000) translate(465.000000, 476.000000)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="Clip-2"></g>
+                <path d="M25.6237775,20 L25.8351937,19.8208134 C26.0578437,19.6322565 26.1926255,19.5180508 25.298875,15.8293617 C23.7501178,9.44431124 17.6050796,5.32270218 10.7250057,4.70704807 L10.7250057,0 L0,8.23737082 L10.7250057,16.4749374 L10.7250057,11.7677914 C15.1828661,11.4339574 19.1015506,11.8183375 21.7240929,14.6044635 C23.0189895,15.9799969 24.5795911,18.7055214 24.9531411,19.5086804 C25.0060134,19.6216384 25.1037724,19.8310401 25.3393169,19.9101621 L25.6237775,20 Z" id="Fill-1" fill="#C3CACF" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

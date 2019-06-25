@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .bg, #graph {
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    .bg {
+      width: 100vw;
+      height: 100vh;
+      background-color: aqua;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg"></div>
+  <canvas id='graph'></canvas>
+  <script>
+  
+    let canvas = document.querySelector('#graph')
+    canvas.width = 200
+    canvas.heigh = 200
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.5)'
+    ctx.save()
+    ctx.clearRect(0, 0, 200, 200)
+    ctx.beginPath()
+    ctx.rect(0, 0, 200, 200)
+    ctx.fill()
+
+
+
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.5)'
+    ctx.beginPath()
+    ctx.rect(0, 0, 100, 100)
+    ctx.fill()
+  </script>
+</body>
+</html>
