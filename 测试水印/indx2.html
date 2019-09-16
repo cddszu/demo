@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+  function _svgWM() {
+    let ip = ''
+    let textAlign = 'left',
+    textBaseline = 'middle',
+    content = ip || '0.0.0.1',
+    rotate = -30;
+    opacity = '0.2',
+    fontSize = '12px',
+    zIndex = 1000;
+
+    let width = content.length + 300;
+    let height = content.length + 300;
+
+    const svgStr = `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">
+      <text x="50%" y="50%" dy="12px"
+      text-anchor="middle"
+      stroke="#000"
+      stroke-width="1"
+      stroke-opacity="${opacity}"
+      fill="none"
+      transform="rotate(-45, 120 120)"
+      style="font-size: ${fontSize};">
+      ${content}
+      </text>
+      </svg>`;
+
+      const base64Url =  `data:image/svg+xml;base64,${btoa(svgStr)}`
+      return base64Url
+  }
+  const base64Url = _svgWM()
+
+  const container = document.body;
+  const watermarkDiv = document.createElement("div");
+        watermarkDiv.setAttribute('style', `
+          position:absolute;
+          top:0;
+          left:0;
+          width:500px;
+          height:500px;
+          z-index:${zIndex};
+          background-repeat:repeat;
+          background-image:url('${base64Url}')`);
+  container.style.position = 'relative';
+  container.insertBefore(watermarkDiv, container.firstChild);
+  </script>
+</body>
+</html>

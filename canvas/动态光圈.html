@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #canvas {
+      border: 1px solid;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  <script>
+    const canvas = document.querySelector('#canvas');
+    canvas.width = '500';
+    canvas.height = '500';
+    const ctx = canvas.getContext('2d')
+    
+    
+    let waveRadius = 50;
+    let direction = '+'
+    setInterval(() => {
+      ctx.clearRect(0, 0, 500, 500)
+      if(waveRadius > 70) {
+        waveRadius = 50
+      }
+
+      waveRadius ++ 
+      
+
+      ctx.beginPath()
+      ctx.fillStyle = `rgba(171, 208, 242, ${1 - (waveRadius - 50)/20})`
+      ctx.arc(250, 250,  waveRadius + 20, Math.PI / 180 * 0, Math.PI / 180 * 360);
+      ctx.fill()
+
+      ctx.beginPath()
+      ctx.fillStyle = `rgba(171, 208, 242, ${(1.5 - (waveRadius - 50)/20) * 0.8})`
+      ctx.arc(250, 250,  waveRadius, Math.PI / 180 * 0, Math.PI / 180 * 360);
+      ctx.fill()
+
+      
+
+
+
+      
+      
+      ctx.beginPath()
+      ctx.arc(250, 250, 50, Math.PI / 180 * 0, Math.PI / 180 * 360);
+      ctx.fillStyle = '#4FA2F1'
+      ctx.fill()
+
+      
+    }, 100)
+
+
+  </script>
+</body>
+</html>
