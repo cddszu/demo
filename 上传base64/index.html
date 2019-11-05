@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <input type="file" id='img' onchange="a(this)">
+    <img src="" alt="" id='uploadImg'>
+    <script>
+      let input = document.querySelector('#img')
+      function a() {
+        var reader = new FileReader();
+        var AllowImgFileSize = 2100000; //上传图片最大值(单位字节)（ 2 M = 2097152 B ）超过2M上传失败
+        var file = input.files[0];
+        var imgUrlBase64;
+        if (file) {
+          //将文件以Data URL形式读入页面
+          imgUrlBase64 = reader.readAsDataURL(file);
+          reader.onload = function (e) {
+          //var ImgFileSize = reader.result.substring(reader.result.indexOf(",") + 1).length;//截取base64码部分（可选可不选，需要与后台沟通）
+          if (AllowImgFileSize != 0 && AllowImgFileSize < reader.result.length) {
+              alert( '上传失败，请上传不大于2M的图片！');
+              return;
+            }else{
+              //执行上传操作
+              console.log(reader.result)
+              document.querySelector('#uploadImg').src = reader.result
+              // alert(reader.result);
+            }
+          }
+        }
+      }
+      input.onChange = function(e) {
+        console.log(e)
+      }
+    </script>
+  </body>
+</html>
